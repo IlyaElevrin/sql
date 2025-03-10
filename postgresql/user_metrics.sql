@@ -73,7 +73,7 @@ SUM(sum_order_value) AS sum_order_value,
 avg(avg_order_value) AS avg_order_value
 FROM all_three AS al
 INNER JOIN avg_order_value AS av
-on al.user_id=av.user_id
+ON al.user_id=av.user_id
 GROUP BY al.user_id
 ORDER BY user_id asc
 ),
@@ -82,7 +82,7 @@ SELECT user_id,
 min(avg_order_value) AS min_order_value,
 max(avg_order_value) AS max_order_value
 FROM sum_price_order AS apo
-right JOIN user_actions AS ua
+RIGHT JOIN user_actions AS ua
 ON apo.order_id=ua.order_id
 WHERE ua.order_id NOT IN (SELECT order_id FROM cancel_ord_id)
 GROUP BY user_id
