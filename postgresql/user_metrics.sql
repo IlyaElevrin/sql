@@ -1,3 +1,4 @@
+-- language: sql
 with count_orders_and_avg_count_products as (
 select u.user_id, 
 count(u.order_id) as orders_count, 
