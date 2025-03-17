@@ -12,7 +12,8 @@ GROUP BY user_id
 ORDER BY user_id
 )
 --for each gender
-SELECT COALESCE(sex, 'unknown') AS sex,  ROUND(AVG(cancel_rate), 3) AS avg_cancel_rate
+SELECT COALESCE(sex, 'unknown') AS sex,  
+    ROUND(AVG(cancel_rate), 3) AS avg_cancel_rate
 FROM cancel_rate AS cr
 FULL JOIN users AS a
 ON cr.user_id=a.user_id
